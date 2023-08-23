@@ -276,7 +276,46 @@ array_pop($stack);
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+* Shifting and Unshifting
+-------------------------
+We saw that array_pop() and array_push() deal exclusively with the end of the array (the index at the length of the array minus 1). PHP also provides functions for adding and removing 
+elements from the beginning of an array (index 0).
 
+The array_shift() function removes the first element of an array and returns that value. Each of the elements in the array will be shifted down an index. For example, the element that was 
+previously at the 3rd index will now be located at the 2nd.
+
+$adjectives = ["bad", "good", "great", "fantastic"];
+$removed = array_shift($adjectives); 
+echo $removed; //Prints: bad
+echo implode(", ", $adjectives); // Prints: good, great, fantastic 
+
+Just like array_pop(), array_shift() reduces the length of the array, and the deleted element is gone for good.
+
+The array_unshift() function takes an array as its first argument. The arguments that follow are elements to be added to the beginning of the array. It returns the new number of elements 
+in the array.
+
+$foods = ["pizza", "crackers", "apples", "carrots"];
+$arr_len = array_unshift($foods, "pasta", "meatballs", "lettuce"); 
+echo $arr_len; //Prints: 7
+echo implode(", ", $foods); 
+// Prints: pasta, meatballs, lettuce, pizza, crackers, apples, carrots
+
+Let’s practice!
+
+index.php
+---------
+<?php
+namespace Codecademy;
+$record_holders = [];
+// Write your code below:
+array_unshift($record_holders, "Tim Montgomery", "Maurice Greene", "Donovan Bailey", "Leroy Burrell", "Carl Lewis");
+
+array_shift($record_holders);
+array_unshift($record_holders, "Justin Gatlin", "Asafa Powell");
+array_shift($record_holders);
+array_unshift($record_holders, "Usain Bolt");
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
 
