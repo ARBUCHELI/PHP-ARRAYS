@@ -1,0 +1,20 @@
+# ASSOCIATIVE ARRAYS
+--------------------
+
+* Introduction
+--------------
+Ordered arrays are awesome when we have data that lends itself to being collected into an ordered (indexed) list. But data can be collected and organized in lots of ways.
+
+Imagine we wanted a data structure to hold a bunch of information about ourself: our name, age, email address, birthday, social security number, and favorite food. We want all of these 
+pieces of data in a single collection but not necessarily in any particular order. And it doesn’t make much sense to access these data items using indices, like in an ordered array. It 
+would be hard to remember, for example, that index 0 corresponds to our name.
+
+Time to meet another fundamental concept in computer science—the map. A map associates keys with values. A key is a string or integer that we use to access a value (of any type). We could 
+create a map with a key "fullname" that points to a value of "Aisle Nevertell"; this is much more understandable than associating the name with index 0. Whenever we need to access a value,
+we’ll be able to use the associated key to find it.
+
+The PHP array type that we’ve been working with is actually implemented as a map! In a PHP ordered array, the index locations are the keys. But the PHP array type also enables us to build 
+more traditional map-like structures where we assign meaningful keys to values (as opposed to indices). We call data structures like this associative arrays.
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
