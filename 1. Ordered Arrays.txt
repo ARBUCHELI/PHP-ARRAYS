@@ -217,7 +217,64 @@ echo $string_array[0]; // Prints: NEW! different first element"
 
 In the code above, we replaced the original string held in the array ("first element") with a new string value: "NEW! different first element".
 
+index.php
+---------
+<?php
+namespace Codecademy;
 
+$change_me = [3, 6, 9];
+// Write your code below:
+
+$change_me[] = "four";
+$change_me[] = 4;
+$change_me[1] = "tadpole";
+
+echo implode(", ", $change_me);
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+* More Array Methods: Pushing and Popping
+-----------------------------------------
+In the previous exercise, we learned how to add single array elements and to change array elements at a given index. PHP also provides us with built-in methods for removing array 
+elements, and for adding many elements at once.
+
+The array_pop() function takes an array as its argument. It removes the last element of an array and returns the removed element.
+
+$my_array = ["tic", "tac", "toe"];
+array_pop($my_array); 
+// $my_array is now ["tic", "tac"]
+$popped = array_pop($my_array); 
+// $popped is "tac"
+// $my_array is now ["tic"]
+
+Note that array_pop() doesn’t just set the last element to NULL. It actually removes it from the array, meaning that array’s length will decrease by one (which we can verify using 
+count()).
+
+The array_push() function takes an array as its first argument. The arguments that follow are elements to be added to the end of the array. array_push() adds each of the elements to the 
+array and returns the new number of elements in the array.
+
+$new_array = ["eeny"];
+$num_added = array_push($new_array, "meeny", "miny", "moe"); 
+echo $num_added; // Prints: 4
+echo implode(", ", $new_array); // Prints: eeny, meeny, miny, moe 
+
+Let’s practice!
+
+index.php
+---------
+<?php
+namespace Codecademy;
+
+$stack = ["wild success", "failure", "struggle"];
+// Write your code below:
+
+array_push($stack, "blocker", "impediment");
+array_pop($stack);
+array_pop($stack);
+array_pop($stack);
+array_pop($stack);
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
 
