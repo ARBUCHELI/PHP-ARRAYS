@@ -154,7 +154,44 @@ print_r($favorite_nums);
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+* Accessing an Element
+----------------------
+The individual elements in an array can be accessed using the array variable’s name, and the location index surrounded by square brackets ([]), for example:
 
+$my_array = ["tic", "tac", "toe"];
+
+echo $my_array[1]; // Prints: tac
+
+This process is sometimes referred to as indexing an array.
+
+Remember the computer evaluates variables it encounters (outside of assignment): it replaces them with the values they hold. Let’s look at an example of indexing an array with a number 
+variable:
+
+$num_var = 2;
+
+$important_info = ["talking chicken", 181, "magnets?!", 99];
+
+echo $important_info[$num_var]; // Prints: magnets?!
+
+Let’s practice accessing elements in arrays!
+
+index.php
+---------
+<?php
+namespace Codecademy;
+
+$round_one = ["X", "X", "first winner"];
+
+$round_two = ["second winner", "X", "X", "X"];
+
+$round_three = ["X", "X", "X", "X", "third winner"];
+
+// Write your code below:
+$winners = [$round_one[2], $round_two[0], $round_three[4]];
+
+echo implode(", ", $winners);
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
 
