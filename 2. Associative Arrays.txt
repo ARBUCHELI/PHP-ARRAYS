@@ -66,7 +66,55 @@ $php_short = [
 
 ==================================================================================================================================================================
 
+* Printing Associative Arrays
+-----------------------------
+As with ordered arrays, using echo to print an entire associative array is not very useful:
 
+$grades = [
+    "Jane" => 98,
+    "Lily" => 74,
+    "Dan" => 88,
+];
+
+echo $grades; // Prints: Array
+
+We can combine each of the values contained by the array into a single string and use echo to print that:
+
+echo implode(", ", $grades); // Prints: 98, 74, 88 
+
+A problem with this technique is that it only displays the values. We don’t see the keys in the array or the relationships between the keys and values. To display this information, we can use the built-in print_r() function:
+
+print_r($grades);
+
+The above code will produce the following output:
+
+Array
+(
+    [Jane] => 98
+    [Lily] => 74
+    [Dan] => 88
+)
+
+Let’s print some associative arrays!
+
+index.php
+---------
+<?php
+namespace Codecademy;
+
+// Write your code below:
+$september_hits = [
+  "The Sixth Sense" => 22896967,
+  "Stigmata" => 18309666,
+  "Blue Streak" => 19208806,
+  "Double Jeopardy" => 23162542 
+];
+
+echo implode(", ", $september_hits);
+
+print_r($september_hits);
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
 
