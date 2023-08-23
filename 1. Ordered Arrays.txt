@@ -193,8 +193,29 @@ echo implode(", ", $winners);
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+* Adding and Changing Elements
+------------------------------
+We can make adjustments to existing arrays—we don’t have to create a new array when we want our array to change.
 
+We add elements to the end of an array by taking the variable name and appending square brackets ([]), the assignment operator (=), and the element we want to add:
 
+$string_array = ["first element", "second element"];
+
+$string_array[] = "third element";
+
+echo implode(", ", $string_array); 
+// Prints: first element, second element, third element 
+``` 
+We can also reassign the individual elements in an array:
+
+```php
+$string_array = ["first element", "second element", "third element"];
+
+$string_array[0] = "NEW! different first element";
+
+echo $string_array[0]; // Prints: NEW! different first element"
+
+In the code above, we replaced the original string held in the array ("first element") with a new string value: "NEW! different first element".
 
 
 
