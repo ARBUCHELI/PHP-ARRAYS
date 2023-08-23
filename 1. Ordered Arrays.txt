@@ -62,3 +62,128 @@ echo count($first_array);
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+* Creating Arrays with Short Syntax
+-----------------------------------
+In addition to using array(), we can also create an array by wrapping comma-separated elements in square brackets ([ ]). This feature is sometimes referred to as short array syntax, and 
+more closely resembles what you might see in other programming languages.
+
+$number_array = [0, 1, 2];
+
+In the code above, we created the variable $number_array and assigned as its value an array containing the numbers 0, 1, and 2. The number 0 is located at the 0th location index, the 
+number 1 at the 1st, and the number 2 and the 2nd.
+
+Let’s compare using short array syntax with invoking the array() function:
+
+$string_array = array("first element", "second element");
+$str_arr_short = ["first element", "second element"];
+
+$mixed_array = array(1, "chicken", 78.2, "bubbles are crazy!");
+$mix_arr_short = [1, "chicken", 78.2, "bubbles are crazy!"];
+
+Here, regardless of which method we used, we got the same results.
+
+When constructing arrays, we can also place each element on its own line to make it easier to read:
+
+$long_array = [
+  1,
+  2,
+  3,
+  4,
+  5,
+  6
+];
+
+Let’s practice creating some short syntax arrays!
+
+index.php
+---------
+<?php
+namespace Codecademy;
+
+// Write your code below:
+$with_function = array("PHP", "popcorn", 555.55);
+$with_short = ["PHP", "popcorn", 555.55];
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+* Printing Arrays
+-----------------
+Since arrays are a more complicated data type than strings or integers, printing them is slightly more challenging. Using echo won’t have the desired result:
+
+$number_array = [0, 1, 2];
+echo $number_array; // Prints: Array
+
+When we tried to use echo to print $number_array, it printed the word “Array” rather than the contents of the array. To print the contents of the array, we can use PHP built-in functions. 
+The built-in print_r() function outputs arrays in a human readable format:
+
+print_r($number_array);
+
+This will output the array in the following format:
+
+Array
+(
+    [0] => 0
+    [1] => 1
+    [2] => 2
+)
+
+If we merely want to print the elements in the array listed, we can convert the array into a string using the built-in implode() function. The implode() function takes two arguments: a 
+string to use between each element (the $glue), and the array to be joined together (the $pieces):
+
+echo implode(", ", $number_array);
+
+This will output in the following format:
+
+0, 1, 2 
+
+Let’s practice printing arrays!
+
+index.php
+---------
+<?php
+namespace Codecademy;
+
+$message = ["Oh hey", " You're doing great", " Keep up the good work!\n"];
+
+$favorite_nums = [7, 201, 33, 88, 91];
+// Write your code below:
+
+echo implode("!", $message);
+
+print_r($favorite_nums);
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
